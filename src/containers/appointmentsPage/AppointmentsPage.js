@@ -7,7 +7,7 @@ export const AppointmentsPage = ({ appointments, contacts, addAppointment }) => 
   const [visitor, setVisitor] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
-  const [isAppointmentPage, setIsAppointmentPage] = useState(false);
+  // const [isAppointmentPage, setIsAppointmentPage] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();

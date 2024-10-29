@@ -17,7 +17,7 @@
     "include": [
       "**/*.ts", 
       "**/*.tsx"  
-, "src/containers/appointmentsPage/AppointmentsPage.tsx", "src/components/appointmentForm/AppointmentForm.js"    ],
+, "src/containers/appointmentsPage/AppointmentsPage.js", "src/components/appointmentForm/AppointmentForm.js", "src/App.tsx"    ],
     "exclude": [
       "node_modules",
       "dist"

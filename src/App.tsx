@@ -3,29 +3,13 @@ import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, N
 import Root, { ROUTES } from "./components/root/Root";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
-
-// Define types for Contact and Appointment objects
-
-interface Contact {
-  id: number;
-  name: string;
-  phone: string;
-  email: string;
-}
-
-interface Appointment {
-  id: number;
-  title: string;
-  contactId: number;
-  date: string;
-  time: string;
-}
+import { Contact, Appointment } from "./types";
 
 function App() {
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [appointments, setAppointments] = useState<Appointment[]>([]);
 
- const addContact = (name: string, phone: string, email: string): void => {
+ const addContact = (name: string, phone: string, email: string) => {
   const newContact = {
     id: contacts.length + 1,
     name: name,
@@ -35,7 +19,7 @@ function App() {
   setContacts([...contacts, newContact]);
  }
  
- const addAppointment = (appointment: Appointment): void => {
+ const addAppointment = (appointment: Appointment) => {
   setAppointments([...appointments, appointment]);
  }
 

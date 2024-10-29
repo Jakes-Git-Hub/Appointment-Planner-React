@@ -14,7 +14,7 @@ var Root = function () {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("nav", null,
             react_1.default.createElement(react_router_dom_1.NavLink, { to: exports.ROUTES.CONTACTS }, "Contacts"),
-            react_1.default.createElement(react_router_dom_1.NavLink, { to: exports.ROUTES.APPOINTMENTS }, "9 Appointments")),
+            react_1.default.createElement(react_router_dom_1.NavLink, { to: exports.ROUTES.APPOINTMENTS }, "Appointments")),
         react_1.default.createElement(react_router_dom_1.Outlet, null)));
 };
 exports.default = Root;

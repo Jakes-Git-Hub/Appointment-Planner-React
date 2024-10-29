@@ -24,36 +24,34 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppointmentsPage = void 0;
-var react_1 = __importStar(require("react")); // Importing FC
+var react_1 = __importStar(require("react"));
 var AppointmentForm_1 = require("../../components/appointmentForm/AppointmentForm");
 var TileList_1 = require("../../components/tileList/TileList");
 var AppointmentsPage = function (_a) {
     var appointments = _a.appointments, contacts = _a.contacts, addAppointment = _a.addAppointment;
-    var _b = (0, react_1.useState)(''), title = _b[0], setTitle = _b[1];
-    var _c = (0, react_1.useState)(''), contactId = _c[0], setContactId = _c[1];
+    var _b = (0, react_1.useState)(''), appointmentName = _b[0], setAppointmentName = _b[1];
+    var _c = (0, react_1.useState)(''), visitor = _c[0], setVisitor = _c[1];
     var _d = (0, react_1.useState)(''), date = _d[0], setDate = _d[1];
     var _e = (0, react_1.useState)(''), time = _e[0], setTime = _e[1];
     var handleSubmit = function (e) {
-        e.preventDefault(); // Prevent the default form submission behavior
-        var selectedContactId = parseInt(contactId, 10);
+        e.preventDefault();
+        var selectedVisitorId = parseInt(visitor);
         var newAppointment = {
-            id: appointments.length + 1,
-            title: title,
-            contactId: selectedContactId,
+            appointmentName: appointmentName,
             date: date,
             time: time,
+            visitor: selectedVisitorId
         };
         addAppointment(newAppointment);
-        // Reset form fields
-        setTitle('');
-        setContactId('');
+        setAppointmentName('');
+        setVisitor('');
         setDate('');
         setTime('');
     };
     return (react_1.default.createElement("div", null,
         react_1.default.createElement("section", null,
             react_1.default.createElement("h2", null, "Add Appointment"),
-            react_1.default.createElement(AppointmentForm_1.AppointmentForm, { contacts: contacts, title: title, setTitle: setTitle, contactId: contactId, setContactId: setContactId, date: date, setDate: setDate, time: time, setTime: setTime, handleSubmit: handleSubmit })),
+            react_1.default.createElement(AppointmentForm_1.AppointmentForm, { contacts: contacts, appointmentName: appointmentName, setAppointmentName: setAppointmentName, visitor: visitor, setVisitor: setVisitor, date: date, setDate: setDate, time: time, setTime: setTime, handleSubmit: handleSubmit })),
         react_1.default.createElement("hr", null),
         react_1.default.createElement("section", null,
             react_1.default.createElement("h2", null, "Appointments"),

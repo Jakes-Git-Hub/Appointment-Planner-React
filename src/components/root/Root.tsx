@@ -13,7 +13,7 @@ const Root: React.FC = () => {
                 <NavLink to={ROUTES.CONTACTS}>
                     Contacts
                 </NavLink>
-                <NavLink to={ROUTES.APPOINTMENTS}>9
+                <NavLink to={ROUTES.APPOINTMENTS}>
                     Appointments
                 </NavLink>
             </nav>

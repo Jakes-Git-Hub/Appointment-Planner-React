@@ -32,20 +32,17 @@ var ContactsPage = function (_a) {
     var _b = (0, react_1.useState)(''), name = _b[0], setName = _b[1];
     var _c = (0, react_1.useState)(''), phone = _c[0], setPhone = _c[1];
     var _d = (0, react_1.useState)(''), email = _d[0], setEmail = _d[1];
-    var _e = (0, react_1.useState)(false), isDuplicate = _e[0], setIsDuplicate = _e[1];
     var handleSubmit = function (e) {
         e.preventDefault();
-        if (!isDuplicate) {
-            addContact(name, phone, email);
-            setName('');
-            setPhone('');
-            setEmail('');
-        }
+        addContact(name, phone, email);
+        setName('');
+        setPhone('');
+        setEmail('');
     };
     return (react_1.default.createElement("div", null,
         react_1.default.createElement("section", null,
             react_1.default.createElement("h2", null, "Add Contact"),
-            react_1.default.createElement(ContactForm_1.ContactForm, { name: name, setName: setName, phone: phone, setPhone: setPhone, email: email, setEmail: setEmail, isDuplicate: isDuplicate, setIsDuplicate: setIsDuplicate, handleSubmit: handleSubmit })),
+            react_1.default.createElement(ContactForm_1.ContactForm, { name: name, setName: setName, phone: phone, setPhone: setPhone, email: email, setEmail: setEmail, handleSubmit: handleSubmit })),
         react_1.default.createElement("hr", null),
         react_1.default.createElement("section", null,
             react_1.default.createElement("h2", null, "Contacts"),

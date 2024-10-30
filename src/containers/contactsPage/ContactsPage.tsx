@@ -13,16 +13,13 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({ appointments, contac
   const [name, setName] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
   const [email, setEmail] = useState<string>('');
-  const [isDuplicate, setIsDuplicate] = useState<boolean>(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!isDuplicate) {
       addContact(name, phone, email);
       setName('');
       setPhone('');
       setEmail('');
-    }
   };
 
   return (
@@ -36,8 +33,6 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({ appointments, contac
           setPhone={setPhone}
           email={email}
           setEmail={setEmail}
-          isDuplicate={isDuplicate}
-          setIsDuplicate={setIsDuplicate}
           handleSubmit={handleSubmit}
         />
       </section>

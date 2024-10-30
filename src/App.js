@@ -54,7 +54,7 @@ function App() {
     };
     var router = (0, react_router_dom_1.createBrowserRouter)((0, react_router_dom_1.createRoutesFromElements)(react_1.default.createElement(react_router_dom_1.Route, { path: "/", element: react_1.default.createElement(Root_1.default, null) },
         react_1.default.createElement(react_router_dom_1.Route, { index: true, element: react_1.default.createElement(react_router_dom_1.Navigate, { to: Root_1.ROUTES.CONTACTS }) }),
-        react_1.default.createElement(react_router_dom_1.Route, { path: Root_1.ROUTES.CONTACTS, element: react_1.default.createElement(ContactsPage_1.ContactsPage, { contacts: contacts, addContact: addContact }) }),
+        react_1.default.createElement(react_router_dom_1.Route, { path: Root_1.ROUTES.CONTACTS, element: react_1.default.createElement(ContactsPage_1.ContactsPage, { contacts: contacts, addContact: addContact, appointments: appointments }) }),
         react_1.default.createElement(react_router_dom_1.Route, { path: Root_1.ROUTES.APPOINTMENTS, element: react_1.default.createElement(AppointmentsPage_1.AppointmentsPage, { appointments: appointments, contacts: contacts, addAppointment: addAppointment }) }))));
     return (react_1.default.createElement(react_router_dom_1.RouterProvider, { router: router }));
 }

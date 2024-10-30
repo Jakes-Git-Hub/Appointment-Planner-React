@@ -30,12 +30,12 @@ var TileList_1 = require("../../components/tileList/TileList");
 var AppointmentsPage = function (_a) {
     var appointments = _a.appointments, contacts = _a.contacts, addAppointment = _a.addAppointment;
     var _b = (0, react_1.useState)(''), appointmentName = _b[0], setAppointmentName = _b[1];
-    var _c = (0, react_1.useState)(''), visitor = _c[0], setVisitor = _c[1];
+    var _c = (0, react_1.useState)(0), visitor = _c[0], setVisitor = _c[1];
     var _d = (0, react_1.useState)(''), date = _d[0], setDate = _d[1];
     var _e = (0, react_1.useState)(''), time = _e[0], setTime = _e[1];
     var handleSubmit = function (e) {
         e.preventDefault();
-        var selectedVisitorId = parseInt(visitor);
+        var selectedVisitorId = visitor;
         var newAppointment = {
             appointmentName: appointmentName,
             date: date,
@@ -44,13 +44,10 @@ var AppointmentsPage = function (_a) {
         };
         addAppointment(newAppointment);
         setAppointmentName('');
-        setVisitor('');
+        setVisitor(0);
         setDate('');
         setTime('');
     };
-    (0, react_1.useEffect)(function () {
-        console.log('visitor' + visitor);
-    }, [visitor]);
     return (react_1.default.createElement("div", null,
         react_1.default.createElement("section", null,
             react_1.default.createElement("h2", null, "Add Appointment"),

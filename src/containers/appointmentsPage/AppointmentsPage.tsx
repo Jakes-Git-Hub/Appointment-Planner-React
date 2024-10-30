@@ -11,16 +11,16 @@ interface AppointmentsPageProps {
 
 export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({ appointments, contacts, addAppointment }) => {
   const [appointmentName, setAppointmentName] = useState<string>('');
-  const [visitor, setVisitor] = useState<string>('');
+  const [visitor, setVisitor] = useState<number>(0);
   const [date, setDate] = useState<string>('');
   const [time, setTime] = useState<string>('');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const selectedVisitorId = parseInt(visitor);
+    const selectedVisitorId = visitor;
 
-    const newAppointment = {
+    const newAppointment: Appointment = {
       appointmentName: appointmentName,
       date: date,
       time: time,
@@ -29,14 +29,10 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({ appointments
 
     addAppointment(newAppointment);
     setAppointmentName('');
-    setVisitor('');
+    setVisitor(0);
     setDate('');
     setTime('');
   };
-
-  useEffect(() => {
-    console.log('visitor' + visitor);
-  }, [visitor]);
 
   return (
     <div>
